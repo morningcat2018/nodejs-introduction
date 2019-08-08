@@ -7,7 +7,7 @@
     "tsc":"tsc",
     "index": "node index.js",
     "runAppJs": "node src/app.js",
-    "runServer":"dist/server"
+    "runServer":"node dist/server"
   },
   "keywords": [
     "demo"
