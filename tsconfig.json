@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+      "lib": [
+        "dom",
+        "es2018",
+        "es2018.promise",
+        "es2020.string"
+      ],
+      "allowJs": true,
+      "module": "commonjs",
+      "target": "es2018",
+      "esModuleInterop": true,
+      "noImplicitAny": false,
+      "moduleResolution": "node",
+      "sourceMap": true,
+      "outDir": "dist",
+      "baseUrl": ".",
+      "paths": {
+        "*": [
+          "node_modules/*",
+          "src/*"
+        ]
+      }
+    },
+    "include": [
+      "src/**/*"
+    ]
+  }
+  
