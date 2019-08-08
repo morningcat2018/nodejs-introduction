@@ -4,9 +4,11 @@
 # NodeJs 入门笔记
 
 本机环境：
+```
 MacOsX Mojave 10.14.6
 NodeJs v10.11.0
 npm 6.10.3
+```
 
 ## 1. 安装
 
