@@ -1,5 +1,5 @@
 import {Request, Response, Router} from 'express';
-import * as baidu_baike from '../lib/web';
+import * as web from '../lib/web';
 
 const {validationResult, param, query} = require('express-validator');
 
@@ -18,7 +18,7 @@ router.get('/url', [query('url').exists().isURL()], validate, (req: Request, res
 
 
     const {url} = req.query;
-    baidu_baike.fetch(encodeURI(url))
+    web.fetch(encodeURI(url))
       .then(v => {
         res.json({
           status: 200,
