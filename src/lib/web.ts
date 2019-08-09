@@ -5,31 +5,39 @@ const {JSDOM} = jsdom;
 
 function goto(url: string): Promise<string> {
     return new Promise(((resolve, reject) => {
-      request({
-        url,
-      }, ((error, response, body) => {
-        if (error) {
-          return reject(error);
-        }
-        resolve(body);
-      }))
+        request({
+            url,
+        }, ((error, response, body) => {
+            if (error) {
+                return reject(error);
+            }
+            resolve(body);
+        }))
     }))
-  }
+}
 
-  export async function fetch(url: string) {
+export async function fetch(url: string) {
     const html = await goto(url);
-      const dom = new JSDOM(html).window.document;
-      const summary = resolveSummary(dom);
-      const birthday = resolveBirthday(dom);
-      const works = resolveWorks(dom);
+    const dom = new JSDOM(html).window.document;
+    const summary = resolveSummary(dom);
+    const birthday = resolveBirthday(dom);
+    const works = resolveWorks(dom);
 
-      return {
-          summary,
-          birthday,
-          works,
-      }
-  
-  }
+    return {
+        summary,
+        birthday,
+        works,
+    }
+
+}
+
+export async function fetchSimple(url: string) {
+    const html = await goto(url);
+    //const dom = new JSDOM(html).window.document;
+    return {
+        html
+    }
+}
 
 
 /**

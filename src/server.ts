@@ -11,13 +11,13 @@ app.use(express.json());
 app.use('/hello', HelloController);
 
 app.use((err: Error & { status: number }, req, res, next) => {
-  res.json({
-    status: err.status || -1,
-    message: err.message
-  })
+    res.json({
+        status: err.status || -1,
+        message: err.message
+    })
 });
 
 app.listen(port, () => {
-  // Success callback
-  console.log(`Listening at http://localhost:${port}/`);
+    // Success callback
+    console.log(`Listening at http://localhost:${port}/`);
 });
